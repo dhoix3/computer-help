@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b1220">
+  <meta name="description" content="Помощь с компьютерами и принтерами: настройка, драйверы, подключение устройств и устранение простых неполадок.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Компьютерная помощь">
+  <meta property="og:description" content="Настройка компьютеров и принтеров, установка драйверов и помощь с Windows.">
+  <meta property="og:locale" content="ru_RU">
+  <meta name="twitter:card" content="summary">
+  <title>Компьютерная помощь — настройка ПК и принтеров</title>
+  <style>
+    :root{color-scheme:dark;--bg:#0b1220;--panel:#111c30;--text:#edf4ff;--muted:#a9b8d0;--accent:#65e0c2;--line:#263752}
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth;scroll-padding-top:90px}
+    body{margin:0;background:radial-gradient(ellipse at 85% 0%,#173653 0,transparent 36%),var(--bg);color:var(--text);font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
+    a{color:inherit}
+    .wrap{width:min(1040px,92%);margin:auto}
+    header{padding:15px 0;border-bottom:1px solid #ffffff12;position:sticky;top:0;z-index:10;background:#0b1220ed;backdrop-filter:blur(12px)}
+    .nav{display:flex;align-items:center;justify-content:space-between;gap:18px}
+    .brand{font-weight:800;display:flex;align-items:center;gap:10px;text-decoration:none}
+    .logo{display:grid;place-items:center;width:38px;height:38px;border-radius:12px;background:var(--accent);color:#08221e;font-weight:900}
+    .navlinks{display:flex;align-items:center;gap:22px}
+    .navlinks a{color:var(--muted);text-decoration:none;font-size:14px}
+    .navlinks a:hover{color:var(--accent)}
+    .menu-button{display:none;background:#ffffff08;color:var(--text);border:1px solid var(--line);border-radius:10px;padding:9px 12px;font:inherit}
+    .hero{padding:72px 0 56px;display:grid;grid-template-columns:1.3fr .7fr;gap:36px;align-items:center}
+    .eyebrow{display:inline-block;color:var(--accent);font-weight:750;font-size:13px;letter-spacing:1.3px;text-transform:uppercase}
+    h1{font-size:clamp(36px,6vw,62px);line-height:1.06;letter-spacing:-1.8px;margin:14px 0 20px}
+    .lead{font-size:18px;color:var(--muted);max-width:620px}
+    .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+    .btn{display:inline-flex;align-items:center;justify-content:center;padding:12px 17px;border-radius:12px;text-decoration:none;font-weight:750;border:1px solid var(--line);transition:transform .15s,background .15s;min-height:48px}
+    .btn:hover{transform:translateY(-2px)}
+    .primary{background:var(--accent);color:#06231e;border-color:var(--accent)}
+    .secondary{background:#ffffff08}
+    .visual{border:1px solid #ffffff16;border-radius:26px;padding:24px;background:linear-gradient(145deg,#192c46,#101a2b);box-shadow:0 24px 70px #0003}
+    .screen{border:1px solid #3b5271;border-radius:16px;padding:18px;background:#09111e}
+    .screen-top{display:flex;gap:6px;margin-bottom:22px}
+    .dot{width:8px;height:8px;border-radius:50%;background:#52647d}
+    .screen-icon{width:46px;height:46px;color:var(--accent)}
+    .screen h3{margin:6px 0}
+    .screen p{margin:0;color:var(--muted);font-size:14px}
+    .status{display:flex;align-items:center;gap:9px;margin-top:18px;color:var(--accent);font-size:13px}
+    .status:before{content:"";width:8px;height:8px;border-radius:50%;background:var(--accent);box-shadow:0 0 12px var(--accent)}
+    section{padding:42px 0}
+    .section-head{max-width:650px;margin-bottom:24px}
+    h2{font-size:clamp(26px,4vw,38px);line-height:1.15;letter-spacing:-.6px;margin:0 0 10px}
+    .section-head p,.muted{color:var(--muted);margin:0}
+    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .card{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:22px}
+    .ico{width:32px;height:32px;color:var(--accent)}
+    .card h3{font-size:18px;margin:12px 0 7px}
+    .card p{font-size:14px;color:var(--muted);margin:0}
+    .price-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .price{font-size:27px;font-weight:850;margin:12px 0 6px}
+    .note{margin-top:16px;padding:14px 16px;border:1px solid #65e0c244;background:#65e0c20d;border-radius:12px;color:var(--muted);font-size:14px}
+    .contact{display:grid;grid-template-columns:1fr .9fr;gap:26px;align-items:center;background:linear-gradient(120deg,#152842,#101a2a);border:1px solid var(--line);border-radius:24px;padding:clamp(22px,5vw,42px)}
+    .contact p{color:var(--muted)}
+    .contact-box{background:#091421;border:1px solid var(--line);border-radius:16px;padding:20px}
+    .contact-box strong{display:block;margin-bottom:8px}
+    .contact-link{display:block;overflow-wrap:anywhere;color:var(--accent);text-decoration:none;margin:8px 0}
+    .contact-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}
+    footer{padding:28px 0 36px;color:#8393ab;font-size:13px}
+    .tiny{font-size:12px;color:#8292a9}
+    .faq-list{display:grid;gap:10px}
+    details{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:16px 18px}
+    summary{cursor:pointer;font-weight:700}
+    details p{color:var(--muted);margin:10px 0 0}
+    @media(max-width:760px){
+      .hero{grid-template-columns:1fr;padding:48px 0 32px;gap:24px}
+      .visual{max-width:480px}
+      .cards,.price-grid{grid-template-columns:1fr}
+      .contact{grid-template-columns:1fr}
+      .menu-button{display:block}
+      .navlinks{display:none;position:absolute;top:68px;left:4%;right:4%;padding:14px;background:#111c30;border:1px solid var(--line);border-radius:14px;flex-direction:column;align-items:stretch;gap:0}
+      .navlinks.open{display:flex}
+      .navlinks a{padding:12px}
+      .actions .btn{flex:1}
+    }
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition:none!important}}
+  </style>
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#top" aria-label="Компьютерная помощь — на главную"><span class="logo">IT</span><span>Компьютерная помощь</span></a>
+    <button class="menu-button" id="menuButton" aria-expanded="false" aria-controls="navLinks">Меню ☰</button>
+    <nav class="navlinks" id="navLinks" aria-label="Основная навигация">
+      <a href="#services">Услуги</a><a href="#cases">Опыт</a><a href="#prices">Цены</a><a href="#faq">Вопросы</a><a href="#contact">Связаться</a>
+    </nav>
+  </div>
+</header>
+<main id="top">
+  <div class="wrap hero">
+    <div>
+      <span class="eyebrow">Компьютеры · Принтеры · Windows</span>
+      <h1>Компьютер снова<br>работает.</h1>
+      <p class="lead">Помощь с компьютерами и принтерами: настройка, переустановка Windows, обслуживание и замена комплектующих.</p>
+      <div class="actions"><a class="btn primary" href="#contact">Заказать помощь</a><a class="btn secondary" href="#services">Посмотреть услуги</a></div>
+    </div>
+    <div class="visual" aria-label="Иллюстрация компьютерной помощи">
+      <div class="screen">
+        <div class="screen-top"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+        <svg class="screen-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true"><rect x="7" y="4" width="34" height="24" rx="4" stroke="currentColor" stroke-width="2.5"/><path d="M17 38h14M24 28v10" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><path d="M15 14h18M15 20h11" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>
+        <h3>Принтер не печатает?</h3><p>Разберёмся с подключением, драйверами и очередью печати.</p>
+        <div class="status">Стоимость согласуем заранее</div>
+      </div>
+    </div>
+  </div>
+  <section id="services"><div class="wrap">
+    <div class="section-head"><h2>Чем могу помочь</h2><p>Работаю с понятными программными задачами и настройками устройств.</p></div>
+    <div class="cards">
+      <article class="card"><svg class="ico" viewBox="0 0 32 32" fill="none" aria-hidden="true"><rect x="7" y="3" width="18" height="10" rx="2" stroke="currentColor" stroke-width="2"/><path d="M5 13h22v10H5zM9 23v5h14v-5M21 17h2" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg><h3>Принтеры</h3><p>Установка драйверов, настройка печати, проверка очереди, подключение по USB или Wi-Fi.</p></article>
+      <article class="card"><svg class="ico" viewBox="0 0 32 32" fill="none" aria-hidden="true"><rect x="3" y="5" width="26" height="18" rx="2" stroke="currentColor" stroke-width="2"/><path d="M12 28h8M16 23v5M8 10h16M8 14h10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><h3>Windows и программы</h3><p>Установка и настройка легальных программ, помощь с обновлениями и обычными ошибками.</p></article>
+      <article class="card"><svg class="ico" viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M7 4h12l6 6v18H7z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M19 4v7h6M11 17h10M11 22h10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><h3>Файлы и устройства</h3><p>Помощь с документами, переносом файлов, подключением периферии и базовыми настройками.</p></article>
+    </div>
+  </div></section>
+  <section id="cases"><div class="wrap">
+    <div class="section-head"><h2>Выполненные работы</h2><p>Практический опыт на компьютерах других людей.</p></div>
+    <div class="cards">
+      <article class="card"><h3>Переустановка Windows</h3><p>Переустановил операционную систему и подготовил компьютер к дальнейшей работе.</p></article>
+      <article class="card"><h3>Обслуживание компьютера</h3><p>Почистил компьютер от пыли и заменил термопасту.</p></article>
+      <article class="card"><h3>Замена комплектующих</h3><p>Заменил блок питания и SSD-накопитель.</p></article>
+    </div>
+    <div class="note">Это описание выполненных работ, а не гарантия, что любая поломка будет устранена. Возможность и стоимость каждой задачи обсуждаем заранее.</div>
+  </div></section>
+  <section id="prices"><div class="wrap">
+    <div class="section-head"><h2>Примерные цены</h2><p>Точная стоимость зависит от задачи. Сначала согласуем цену — потом начинаю работу.</p></div>
+    <div class="price-grid">
+      <article class="card"><h3>Простая настройка</h3><div class="price">от 200 ₽</div><p>Подключение устройства или изменение простой настройки.</p></article>
+      <article class="card"><h3>Драйверы и печать</h3><div class="price">от 300 ₽</div><p>Установка драйвера, настройка очереди печати и проверка работы.</p></article>
+      <article class="card"><h3>Диагностика</h3><div class="price">по договорённости</div><p>Если причина неясна, сначала согласуем объём проверки и стоимость.</p></article>
+    </div>
+    <div class="note">Цены — ориентир. Итоговая стоимость согласуется до начала работы.</div>
+  </div></section>
+  <section id="faq"><div class="wrap">
+    <div class="section-head"><h2>Частые вопросы</h2><p>Коротко о том, как проходит помощь.</p></div>
+    <div class="faq-list">
+      <details><summary>Сколько стоит помощь?</summary><p>Есть ориентировочные цены выше. До начала работы я уточню задачу и согласую стоимость.</p></details>
+      <details><summary>Что нужно сообщить перед обращением?</summary><p>Напишите модель устройства, что именно не работает и какие сообщения об ошибке появляются. Не отправляйте пароли и коды подтверждения.</p></details>
+      <details><summary>Вы чините любую поломку?</summary><p>Нет. Я берусь за задачи, с которыми умею работать. Сложный ремонт железа и опасные работы не выполняю.</p></details>
+      <details><summary>Как проходит оплата?</summary><p>Способ оплаты и стоимость согласуем заранее. Для несовершеннолетнего заказчика и исполнителя условия обсуждаются с родителями.</p></details>
+    </div>
+  </div></section>
+  <section id="contact"><div class="wrap">
+    <div class="contact">
+      <div><span class="eyebrow">Есть проблема?</span><h2>Свяжитесь со мной</h2><p>Напишите, какая модель принтера или компьютера и что именно не работает. Я отвечу, смогу ли помочь и сколько это будет стоить.</p></div>
+      <div class="contact-box">
+        <strong>Контакты</strong>
+        <a class="contact-link" href="tel:+79656587709">Телефон: +7 (965) 658-77-09</a>
+        <a class="contact-link" href="mailto:pc.help.965@gmail.com">Email: pc.help.965@gmail.com</a>
+        <div class="contact-actions"><a class="btn primary" href="tel:+79656587709">Позвонить</a><a class="btn secondary" href="mailto:pc.help.965@gmail.com?subject=Компьютерная%20помощь">Написать email</a></div>
+        <p class="tiny">Пишите по указанному адресу электронной почты. Не отправляйте пароли и коды подтверждения.</p>
+      </div>
+    </div>
+  </div></section>
+</main>
+<footer><div class="wrap">© <span id="year"></span> Компьютерная помощь · Работа по предварительной договорённости.<br><span class="tiny">Частная услуга, не официальный сервисный центр.</span></div></footer>
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+  const menuButton = document.getElementById('menuButton');
+  const navLinks = document.getElementById('navLinks');
+  menuButton.addEventListener('click', () => {
+    const opened = navLinks.classList.toggle('open');
+    menuButton.setAttribute('aria-expanded', String(opened));
+    menuButton.textContent = opened ? 'Закрыть ×' : 'Меню ☰';
+  });
+  navLinks.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+    navLinks.classList.remove('open');
+    menuButton.setAttribute('aria-expanded', 'false');
+    menuButton.textContent = 'Меню ☰';
+  }));
+</script>
+</body>
+</html>
